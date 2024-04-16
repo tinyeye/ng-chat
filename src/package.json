@@ -1,6 +1,6 @@
 {
   "name": "ng-chat",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "peerDependencies": {
     "@angular/common": "*",
     "@angular/core": "*",
@@ -8,22 +8,21 @@
     "rxjs": "*"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^12.0.5",
-    "@angular/common": "^12.0.5",
-    "@angular/compiler": "^12.0.5",
-    "@angular/compiler-cli": "^12.0.5",
-    "@angular/core": "^12.0.5",
-    "@angular/forms": "^12.0.5",
-    "@angular/platform-browser": "^12.0.5",
+    "@angular-devkit/build-angular": "^16.2.0",
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/compiler-cli": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "@angular/platform-browser": "^16.2.0",
     "gulp": "~4.0.2",
     "gulp-inline-ng2-template": "^5.0.1",
-    "ng-packagr": "^12.0.6",
+    "ng-packagr": "^16.2.0",
     "rollup": "^2.52.1",
-    "rxjs": "^7.1.0",
-    "tsickle": "^0.43.0",
-    "typescript": "~4.2.4",
+    "rxjs": "7.4.0",
+    "typescript": "~5.1.0",
     "uglify-js": "^3.13.9",
-    "zone.js": "^0.11.4"
+    "zone.js": "~0.13.0"
   },
   "scripts": {
     "templates": "gulp inline-templates",
@@ -41,9 +40,9 @@
   "description": "A simple facebook/linkedin lookalike chat module for Angular applications.",
   "author": "Rafael Carvalho",
   "license": "MIT",
-  "homepage": "https://github.com/rpaschoal/ng-chat",
+  "homepage": "https://github.com/tinyeye/ng-chat",
   "bugs": {
-    "url": "https://github.com/rpaschoal/ng-chat/issues"
+    "url": "https://github.com/tinyeye/ng-chat/issues"
   },
   "ngPackage": {
     "lib": {
