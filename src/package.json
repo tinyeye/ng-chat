@@ -1,5 +1,5 @@
 {
-  "name": "ng-chat",
+  "name": "@tinyeye/ng-chat",
   "version": "4.0.0",
   "peerDependencies": {
     "@angular/common": "*",
