@@ -1,4 +1,5 @@
-# ⚠️ This project has been archived and is no longer maintained
+# This project has been picked up by TinyEYE Technologies
+
 
 # ng-chat
 
