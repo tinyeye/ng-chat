@@ -49,5 +49,9 @@
       "entryFile": "index.ts"
     }
   },
-  "dependencies": {}
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinyeye/ng-chat.git"
+  }
 }
