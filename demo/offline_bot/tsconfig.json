@@ -20,8 +20,8 @@
   },
   "include": [
     "src/**/*",
-    "node_modules/ng-chat/*.ts",
-    "node_modules/ng-chat/ng-chat/**/*.ts"
+    "node_modules/@tinyeye/ng-chat/*.ts",
+    "node_modules/@tinyeye/ng-chat/ng-chat/**/*.ts"
   ],
   "exclude": [
     "**/*.spec.ts"
