@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatAdapter } from 'ng-chat';
+import { ChatAdapter } from '@tinyeye/ng-chat';
 import { DemoAdapter } from './demo-adapter';
 import { DemoAdapterPagedHistory } from './demo-adapter-paged-history';
 
