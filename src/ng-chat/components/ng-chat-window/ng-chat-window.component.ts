@@ -36,7 +36,7 @@ export class NgChatWindowComponent {
     public localization: Localization;
 
     @Input()
-    public showOptions: boolean;
+    public showOptions: any;
 
     @Input()    
     public emojisEnabled: boolean = true;

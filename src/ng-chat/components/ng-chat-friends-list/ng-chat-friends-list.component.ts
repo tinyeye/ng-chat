@@ -119,7 +119,7 @@ export class NgChatFriendsListComponent implements OnChanges {
         this.isCollapsed = !this.isCollapsed;
     }
 
-    onFriendsListCheckboxChange(selectedUser: User, isChecked: boolean): void
+    onFriendsListCheckboxChange(selectedUser: User, isChecked: any): void
     {
         if(isChecked) {
             this.selectedUsersFromFriendsList.push(selectedUser);
