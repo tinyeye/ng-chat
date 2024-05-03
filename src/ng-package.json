@@ -1,0 +1,7 @@
+{
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "./dist/tinyeye-ng-chat",
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  }
