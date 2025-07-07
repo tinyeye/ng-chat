@@ -13,18 +13,49 @@ A simple facebook/linkedin lookalike chat module for Angular applications.
 
 
 ## Getting started
+
+### Requirements
+
+- **Node.js**: 18.13.0 or higher (recommended: 20.x LTS)
+- **Angular**: 18.x
+- **TypeScript**: 5.4 or higher
+
 ### Installation
 
-```
+```bash
 npm install @tinyeye/ng-chat
 ```
 
 ### Setup
-#### Import NgChatModule on your AppModule (EG: app.module.ts):
 
+#### Option 1: Using Standalone Components (Recommended for Angular 18+)
+
+```typescript
+import { Component } from '@angular/core';
+import { NgChatModule } from '@tinyeye/ng-chat';
+import { ChatAdapter } from '@tinyeye/ng-chat';
+import { MyAdapter } from './my-adapter';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgChatModule],
+  template: `
+    <ng-chat [adapter]="adapter" [userId]="userId"></ng-chat>
+  `
+})
+export class AppComponent {
+  userId = 999;
+  public adapter: ChatAdapter = new MyAdapter();
+}
 ```
+
+#### Option 2: Traditional Module Setup
+
+```typescript
 ...
 import { NgChatModule } from '@tinyeye/ng-chat';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,10 +64,11 @@ import { NgChatModule } from '@tinyeye/ng-chat';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     NgChatModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -213,6 +245,65 @@ const imageMessage: Message = {
     dateSent: new Date()
 };
 ```
+
+# Development
+
+## Prerequisites
+
+- Node.js 20.x (LTS recommended)
+- npm 9.x or higher
+
+## Development Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Run tests
+npm test
+
+# Run linting
+npm run lint
+
+# Build for production
+npm run build
+```
+
+## Testing
+
+### Unit Tests
+```bash
+# Run unit tests
+npm test
+
+# Run tests with coverage
+npm run test -- --code-coverage
+```
+
+### E2E Tests
+```bash
+# Run e2e tests (headless)
+npm run e2e
+
+# Open Cypress Test Runner
+npm run e2e:open
+```
+
+## Build and CI
+
+This project uses:
+- **Angular CLI 18** for building and development
+- **ESLint** for code linting (replaces TSLint)
+- **Cypress** for e2e testing (replaces Protractor)
+- **Karma + Jasmine** for unit testing
+
+The CI pipeline runs on Travis CI with Node.js 20 and includes:
+- Linting with ESLint
+- Unit tests with code coverage
+- Production build verification
 
 # Troubleshooting
 
