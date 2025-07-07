@@ -1,36 +1,26 @@
-dist: trusty
+dist: focal
 language: node_js
 node_js:
-  - "10"
+  - "20"
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 before_script: 
   - npm install
-  - cd src
-  - npm link
-  - npm install -g @angular/cli
-  - npm install -g karma
-  - npm install
+  - npm install -g @angular/cli@18
 script:
-  # Initial SRC component build
-  - npm run build
+  # Build the application
+  - ng build --configuration production
   
-  # Node modules clean up
-  - rm -r node_modules
+  # Run unit tests
+  - ng test --no-watch --code-coverage --browsers=ChromeHeadless
   
-  # Karma Test Build
-  - cd ..
-  - cd demo/offline_bot
-  - npm link ng-chat
-  - npm install
-  - cd ../..
+  # Run linting
+  - ng lint
   
-  # FIX (Tests): node_modules/@angular/core/src/render3/ng_dev_mode.d.ts(9,11): error TS2451: Cannot redeclare block-scoped variable 'ngDevMode'.
-  - rm -f node_modules/@angular/core/src/render3/ng_dev_mode.d.ts
-
-  - ng test --code-coverage --watch=false
+  # Run e2e tests (when Cypress is configured)
+  # - npm run e2e
   
 after_success:
   - ./node_modules/.bin/codecov
